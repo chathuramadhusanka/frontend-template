@@ -9,5 +9,5 @@
 *   From inside project folder `/frontend-template` open CMD/terminal 
 *   Run `npm install` to download libraries.
 *   Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
-*   Login with username - testjwtclientid2, password - XY7kmzoNzl100
+*   Login with username - john.doe, password - 123456
 
