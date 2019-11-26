@@ -44,12 +44,24 @@ export class LoginComponent implements OnInit, OnDestroy {
       resp => {
         localStorage.setItem('access_token', resp.body['access_token']);
         this.getClientForModal();
+        // localStorage.setItem('refresh_token', resp.body['refresh_token']);
+        // localStorage.setItem('user_details', JSON.stringify(resp.body['user_details']));
       },
       err => {
         this.alertService.error(err.error.message);
         this.loading = false;
       }
     );
+    // this.authService.login(user).subscribe(
+    //   resp => {
+    //     localStorage.setItem('access_token', resp.body['access_token']);
+    //     this.getClientForModal();
+    //   },
+    //   err => {
+    //     this.alertService.error(err.error.message);
+    //     this.loading = false;
+    //   }
+    // );
   }
 
   getClientForModal() {

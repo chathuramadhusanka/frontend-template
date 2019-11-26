@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   envName: 'dev',
   apiPath: {
-    API_MEMBER_DETAILS_URL: 'http://localhost:8089/api/v1',
+    API_MEMBER_DETAILS_URL: 'http://localhost:8082/patient',
     API_LOGIN_URL: 'http://localhost:8089'
   }
 };

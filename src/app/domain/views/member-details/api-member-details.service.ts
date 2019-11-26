@@ -15,10 +15,24 @@ export class ApiMemberDetailsService {
     }
 
     createMember(member): Observable<HttpResponseBody> {
-        return this.http.post<HttpResponseBody>(
-            `${this.API_MEMBER_DETAILS_URL}/member/create`, JSON.stringify(member), { headers: this.headers }
+        let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        const access_token = localStorage.getItem('access_token');
+        if (access_token)
+            headers = new HttpHeaders({ Authorization: `Bearer ${access_token}` ,'Content-Type': 'application/json' });
+        return this.http.get<HttpResponseBody>(
+            `${this.API_MEMBER_DETAILS_URL}/getuser`, { headers: headers }
         );
     }
+
+    // createMember(member): Observable<HttpResponseBody> {
+    //     let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    //     const access_token = localStorage.getItem('access_token');
+    //     if (access_token)
+    //         headers = new HttpHeaders({ Authorization: `Bearer ${access_token}` ,'Content-Type': 'application/json' });
+    //     return this.http.post<HttpResponseBody>(
+    //         `${this.API_MEMBER_DETAILS_URL}/getuser`, JSON.stringify(member), { headers: headers }
+    //     );
+    // }
 
     getMemberById(id: String): Observable<HttpResponseBody> {
         return this.http.get<HttpResponseBody>(

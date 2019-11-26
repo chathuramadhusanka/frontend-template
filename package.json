@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl --ssl-key ./certificates/localhost.key  --ssl-cert ./certificates/localhost.crt",
     "start-dev": "ng serve",
     "start-uat": "ng serve -c uat",
     "start-prod": "ng serve -c prod",
